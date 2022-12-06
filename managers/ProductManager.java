@@ -1,7 +1,6 @@
 package managers;
 
 import entity.Products;
-import entity.Price;
 import java.util.Scanner;
 
 public class ProductManager {
@@ -15,18 +14,20 @@ public class ProductManager {
         Products productName = new Products();
         
         System.out.println("Введите название товара: ");
-        productName.setName(scanner.nextLine());
-        System.out.println("Введите бренд: ");
-        
+        productName.setProductName(scanner.nextLine());
         System.out.println("Введите цену: ");
-        productName.setPrice(scanner.nextInt());
+        productName.setProductPrice(scanner.nextInt());
         System.out.println("Введите кол-во товаров: ");
-        productName.setQuantity(scanner.nextInt());
+        productName.setProductQuantity(scanner.nextInt());
 
         return productName;
         }
-        
-          
+    public void printListProducts(Products[] products){
+        for (int i = 0; i < products.length; i++) {
+            Products pr  = products[i];
+            System.out.printf(i+1+".  %s%n",pr.getProductName() +" - "+ pr.getProductPrice() +"| Quantity: "+pr.getProductQuantity() );
+        }
+
+    }
+    
 }
-
-
