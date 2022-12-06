@@ -1,7 +1,5 @@
 package entity;
 
-import java.util.Arrays;
-
 public class Products {
     private String name;
     private int price;
@@ -10,31 +8,31 @@ public class Products {
     public Products() {
     }
 
-    public String getName() {
+    public String getProductName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setProductName(String name) {
         this.name = name;
     }
     
-    public int getPrice() {
+    public int getProductPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setProductPrice(int price) {
         this.price = price;
     }
     
-    public int getQuantity() {
+    public int getProductQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setProductQuantity(int quantity) {
         this.quantity = quantity;
     }
 
-
+        
     @Override
     public String toString() {
         return "Product{" + "название=" + name 
@@ -42,5 +40,12 @@ public class Products {
                         + ", кол-во=" + quantity 
                         + '}';
     }
-
+    public boolean quantityMinuss(int quantity){
+        if(this.quantity>=quantity){
+            this.quantity=this.quantity-quantity;
+            return true;
+        }
+        return false;
+    }
+    
 }
